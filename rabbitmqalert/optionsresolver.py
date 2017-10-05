@@ -4,6 +4,7 @@
 import optparse
 import ConfigParser
 import os.path
+from pprint import pprint
 
 
 class OptionsResover:
@@ -82,6 +83,7 @@ class OptionsResover:
         conditions = OptionsResover.construct_conditions(options, cli_arguments, config_file_options)
         options = dict(options.items() + conditions.items())
 
+        #pprint(options)
         return options
 
     @staticmethod
