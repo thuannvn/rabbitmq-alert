@@ -29,11 +29,11 @@ class RabbitMQAlert:
         if ready_size is not None and messages_ready > ready_size:
             self.send_notification(options, "%s: messages_ready > %s" % (queue, str(ready_size)))
 
-        if unack_size is not None and messages_unacknowledged > unack_size:
-            self.send_notification(options, "%s: messages_unacknowledged > %s" % (queue, str(unack_size)))
+        # if unack_size is not None and messages_unacknowledged > unack_size:
+        #     self.send_notification(options, "%s: messages_unacknowledged > %s" % (queue, str(unack_size)))
 
-        if total_size is not None and messages > total_size:
-            self.send_notification(options, "%s: messages > %s" % (queue, str(total_size)))
+        # if total_size is not None and messages > total_size:
+        #     self.send_notification(options, "%s: messages > %s" % (queue, str(total_size)))
 
     def check_connection_conditions(self, options):
         queue = options["queue"]
